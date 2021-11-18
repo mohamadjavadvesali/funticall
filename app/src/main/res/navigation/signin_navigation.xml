@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/signinnavigation"
+    app:startDestination="@id/verificationPhoneFragment">
+    <fragment
+        android:id="@+id/verificationPhoneFragment"
+        android:name="com.fntl.app.view.Signup.VerificationPhoneFragment"
+        android:label="VerificationPhoneFragment">
+        <action
+            android:id="@+id/action_verificationPhoneFragment_to_verificationCodeFragment"
+            app:destination="@id/verificationCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationCodeFragment"
+        android:name="com.fntl.app.view.Signup.VerificationCodeFragment"
+        android:label="VerificationCodeFragment">
+        <action
+            android:id="@+id/action_verificationCodeFragment_to_verificationPhoneFragment"
+            app:destination="@id/verificationPhoneFragment" />
+    </fragment>
+</navigation>
