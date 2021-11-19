@@ -15,6 +15,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ethanhua.skeleton.Skeleton;
+import com.ethanhua.skeleton.SkeletonScreen;
 import com.fntl.app.Adapter.PostListAdapter;
 import com.fntl.app.R;
 import com.fntl.app.databinding.FragmentHomeBinding;
@@ -43,8 +45,23 @@ public class HomeFragment extends Fragment {
         binding.homeFragmentPosts.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         binding.homeFragmentPosts.setAdapter(adapter);
-
-
+/*
+        SkeletonScreen skeletonScreen = Skeleton.bind( binding.homeFragmentPosts)
+                .adapter(adapter)
+                .shimmer(true)
+                .angle(20)
+                .frozen(true)
+                .duration(1200)
+                .count(10)
+                .load(R.layout.post_item_layout)
+                .show(); //default count is 10
+        binding.homeFragmentPosts.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                skeletonScreen.hide();
+            }
+        }, 3000);
+*/
         viewModel.getPosts(page).observe(getViewLifecycleOwner(), new Observer<List<PostModel>>() {
             @Override
             public void onChanged(List<PostModel> postModels) {

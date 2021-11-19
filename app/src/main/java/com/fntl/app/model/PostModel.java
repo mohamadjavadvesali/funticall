@@ -110,7 +110,7 @@ public class PostModel {
     }
 
     public int getCommentCount() {
-        return commentCount;
+        return commentCount ;
     }
 
     public void setCommentCount(int commentCount) {

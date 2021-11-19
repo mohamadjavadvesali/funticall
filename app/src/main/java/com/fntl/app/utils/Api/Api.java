@@ -1,5 +1,6 @@
 package com.fntl.app.utils.Api;
 
+import com.fntl.app.model.Message;
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.ResponseModel;
 import com.fntl.app.model.Token;
@@ -24,5 +25,9 @@ public interface Api {
 
     @POST("Core/api/v1/Account/SignInVerification")
     Single<Token> get_Token(@Body VerificationCodeModel verificationCodeModel);
+
+
+    @POST ("Core/api/v{version}/Comment/Global/{id}")
+    Single<Message> get_Commment_Post ();
 
 }

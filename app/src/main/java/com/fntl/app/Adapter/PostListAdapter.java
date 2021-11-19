@@ -2,6 +2,7 @@ package com.fntl.app.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +64,9 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.Holder
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), CommentsPostActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putLong("id_post", postModel.getId());
+                intent.putExtras(bundle);
                 view.getContext().startActivity(intent);
 
             }

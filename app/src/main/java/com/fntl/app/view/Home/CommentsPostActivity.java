@@ -27,7 +27,7 @@ public class CommentsPostActivity extends AppCompatActivity {
     private ImageView btn_send;
     private EditText et_content;
     private AdapterCommentPost adapter;
-    private RecyclerView recycler_view;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,20 +36,23 @@ public class CommentsPostActivity extends AppCompatActivity {
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.funtical_action_bar);
-        iniComponent();
+
+
+       // iniComponent();
     }
 
     public void iniComponent() {
-        recycler_view = binding.recyclerView;
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
-        recycler_view.setLayoutManager(layoutManager);
-        recycler_view.setHasFixedSize(true);
+        binding.recyclerView.setLayoutManager(layoutManager);
+        binding.recyclerView.setHasFixedSize(true);
 
         adapter = new AdapterCommentPost(this);
-        recycler_view.setAdapter(adapter);
-        adapter.insertItem(new Message(adapter.getItemCount(), getString(R.string.lorm), false, adapter.getItemCount() % 5 == 0, Tools.getFormattedTimeEvent(System.currentTimeMillis())));
-        adapter.insertItem(new Message(adapter.getItemCount(), "Hello!", true, adapter.getItemCount() % 5 == 0, Tools.getFormattedTimeEvent(System.currentTimeMillis())));
+        binding.recyclerView.setAdapter(adapter);
+
+      //  adapter.insertItem(new Message(adapter.getItemCount(), getString(R.string.lorm), false, adapter.getItemCount() % 5 == 0, Tools.getFormattedTimeEvent(System.currentTimeMillis())));
+      //  adapter.insertItem(new Message(adapter.getItemCount(), "Hello!", true, adapter.getItemCount() % 5 == 0, Tools.getFormattedTimeEvent(System.currentTimeMillis())));
 
         btn_send = binding.btnSend;
         et_content = binding.textContent;
@@ -69,7 +72,7 @@ public class CommentsPostActivity extends AppCompatActivity {
         if (msg.isEmpty()) return;
         adapter.insertItem(new Message(adapter.getItemCount(), msg, false, adapter.getItemCount() % 5 == 0, Tools.getFormattedTimeEvent(System.currentTimeMillis())));
         et_content.setText("");
-        recycler_view.scrollToPosition(adapter.getItemCount() - 1);
+        binding.recyclerView.scrollToPosition(adapter.getItemCount() - 1);
       /*  new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
