@@ -3,6 +3,7 @@ package com.fntl.app.viewmodel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.fntl.app.model.Comment;
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.ResponseModel;
 import com.fntl.app.model.Token;
@@ -27,6 +28,11 @@ public class MainActivityViewModel extends ViewModel {
 
     public LiveData<Token> get_verification(String number, String code, int platform, String version, String deviceid) {
         return Repository.getInstance().Verification(number, code, platform, version, deviceid, disposable);
+
+    }
+
+    public LiveData<List<Comment>> get_Commment_Post() {
+        return Repository.getInstance().get_Comment(disposable);
 
     }
 

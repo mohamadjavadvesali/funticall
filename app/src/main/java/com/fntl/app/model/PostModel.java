@@ -17,9 +17,9 @@ public class PostModel {
     private int membershipTypeEnum;
     private String membershipTypeTitle;
     private long parentId;
-    private List<ImageModel> images;
+    private List<Image> images;
 
-    public PostModel(long id, long personId, String fullName, String content, String createdDate, boolean isLikeByCurrentPerson, int likesCount, boolean isDisLikeByCurrentPerson, int disLikesCount, int commentCount, String avatar, int membershipTypeEnum, String membershipTypeTitle, long parentId, List<ImageModel> images) {
+    public PostModel(long id, long personId, String fullName, String content, String createdDate, boolean isLikeByCurrentPerson, int likesCount, boolean isDisLikeByCurrentPerson, int disLikesCount, int commentCount, String avatar, int membershipTypeEnum, String membershipTypeTitle, long parentId, List<Image> images) {
         this.id = id;
         this.personId = personId;
         this.fullName = fullName;
@@ -149,11 +149,11 @@ public class PostModel {
         this.parentId = parentId;
     }
 
-    public List<ImageModel> getImages() {
+    public List<Image> getImages() {
         return images;
     }
 
-    public void setImages(List<ImageModel> images) {
+    public void setImages(List<Image> images) {
         this.images = images;
     }
 }

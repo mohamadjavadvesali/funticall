@@ -1,5 +1,6 @@
 package com.fntl.app.utils.Api;
 
+import com.fntl.app.model.Comment;
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.ResponseModel;
 import com.fntl.app.model.Token;
@@ -25,4 +26,7 @@ public interface Api {
     @POST("Core/api/v1/Account/SignInVerification")
     Single<Token> get_Token(@Body VerificationCodeModel verificationCodeModel);
 
+
+    @GET("Core/api/v1/Comment/Global/0")
+    Single<List<Comment>> getComment_post(@Query("relatedTableEnum") int relatedTableEnum);
 }

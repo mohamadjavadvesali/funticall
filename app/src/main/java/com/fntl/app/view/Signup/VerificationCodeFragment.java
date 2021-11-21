@@ -1,6 +1,5 @@
 package com.fntl.app.view.Signup;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,7 +55,7 @@ public class VerificationCodeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         String phonenumber = getArguments().getString("mobile_number");
-        binding.phoneCode.setText("کد چهار رقمی ارسال شده به شماره " + phonenumber+ " را وارد کنید.");
+        binding.phoneCode.setText("کد چهار رقمی ارسال شده به شماره " + phonenumber + " را وارد کنید.");
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,8 +63,8 @@ public class VerificationCodeFragment extends Fragment {
                 viewModel.get_verification(phonenumber, editText.getText().toString(), 1, "0.0.1", "string").observe(getViewLifecycleOwner(), new Observer<Token>() {
                     @Override
                     public void onChanged(Token token) {
-                        Log.i(TAG, "onChanged:  "+token.getMessage() + token.getData().getToken() + token.getErrors() );
-                        Toast.makeText(getActivity(),"عملیات با موفقیت انجام شد..." , Toast.LENGTH_SHORT).show();
+                        Log.i(TAG, "onChanged:  " + token.getMessage() + token.getData().getToken() + token.getErrors());
+                        Toast.makeText(getActivity(), "عملیات با موفقیت انجام شد...", Toast.LENGTH_SHORT).show();
 
                     }
                 });

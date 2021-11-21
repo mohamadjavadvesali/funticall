@@ -6,22 +6,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 public class App extends Application {
     public static Context context;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        context = getApplicationContext();
-        if (hasInternetConnection()) {
-            Toast.makeText(getApplicationContext(), "Have Connection !", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "No Connection", Toast.LENGTH_LONG).show();
-
-        }
-    }
 
     public static boolean hasInternetConnection() {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -34,9 +20,18 @@ public class App extends Application {
             return true;
         }
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        if (activeNetwork != null && activeNetwork.isConnected()) {
-            return true;
+        return activeNetwork != null && activeNetwork.isConnected();
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        context = getApplicationContext();
+        if (hasInternetConnection()) {
+            Toast.makeText(getApplicationContext(), "Have Connection !", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "No Connection", Toast.LENGTH_LONG).show();
+
         }
-        return false;
     }
 }

@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.fntl.app.model.Comment;
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.ResponseModel;
 import com.fntl.app.model.Token;
@@ -104,6 +105,31 @@ public class Repository {
                     public void onError(@NonNull Throwable e) {
                         Log.i(TAG, "onError: " + e.fillInStackTrace());
 
+                    }
+                });
+        return liveData;
+    }
+
+
+    public LiveData<List<Comment>> get_Comment(CompositeDisposable disposable) {
+        MutableLiveData<List<Comment>> liveData = new MutableLiveData<>();
+        RetrofitInstance.getInstance().getComment_post(7)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<List<Comment>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable.add(d);
+                    }
+
+                    @Override
+                    public void onSuccess(@NonNull List<Comment> comments) {
+                        liveData.setValue(comments);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        Log.i(TAG, "onError: " + e.fillInStackTrace());
                     }
                 });
         return liveData;
