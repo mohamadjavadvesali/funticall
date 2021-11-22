@@ -27,11 +27,5 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
-        if (hasInternetConnection()) {
-            Toast.makeText(getApplicationContext(), "Have Connection !", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "No Connection", Toast.LENGTH_LONG).show();
-
-        }
     }
 }
