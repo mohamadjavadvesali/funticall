@@ -1,4 +1,4 @@
-package com.fntl.app.view.Signup;
+package com.fntl.app.view.Sign_up_in;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -65,7 +65,8 @@ public class VerificationCodeFragment extends Fragment {
                     public void onChanged(Token token) {
                         Log.i(TAG, "onChanged:  " + token.getMessage() + token.getData().getToken() + token.getErrors());
                         Toast.makeText(getActivity(), "عملیات با موفقیت انجام شد...", Toast.LENGTH_SHORT).show();
-
+                        Navigation.findNavController(button)
+                                .navigate(R.id.action_verificationCodeFragment_to_registerFragment2);
                     }
                 });
             }
@@ -74,8 +75,7 @@ public class VerificationCodeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view)
-                        .navigate(R.id.action_verificationCodeFragment_to_verificationPhoneFragment)
-                ;
+                        .navigate(R.id.action_verificationCodeFragment_to_verificationPhoneFragment);
             }
         });
     }

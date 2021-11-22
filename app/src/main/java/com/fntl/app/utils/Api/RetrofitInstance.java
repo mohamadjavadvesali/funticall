@@ -16,6 +16,7 @@ public class RetrofitInstance {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request newRequest = chain.request().newBuilder()
+
                     .addHeader("Authorize", "Bearer " + "2772a432-bb00-4d9d-a41c-28da6d954914")
                     .build();
             return chain.proceed(newRequest);

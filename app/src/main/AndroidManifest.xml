@@ -21,7 +21,7 @@
             android:name=".view.Home.CommentsPostActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Signup.SignInActivity"
+            android:name=".view.Sign_up_in.SignInActivity"
             android:exported="false" />
         <activity android:name=".view.Home.MainActivity">
             <intent-filter>

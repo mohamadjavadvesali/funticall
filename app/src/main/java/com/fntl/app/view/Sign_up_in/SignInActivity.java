@@ -1,4 +1,4 @@
-package com.fntl.app.view.Signup;
+package com.fntl.app.view.Sign_up_in;
 
 import android.os.Bundle;
 
@@ -16,11 +16,16 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
         navController = navHostFragment.getNavController();
+
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.funtical_action_bar);
 
+    }    @Override
+    public boolean onSupportNavigateUp() {
+        return super.onSupportNavigateUp();
     }
 }

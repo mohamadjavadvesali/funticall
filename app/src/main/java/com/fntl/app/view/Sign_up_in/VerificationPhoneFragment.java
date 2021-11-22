@@ -1,4 +1,4 @@
-package com.fntl.app.view.Signup;
+package com.fntl.app.view.Sign_up_in;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,9 +54,11 @@ public class VerificationPhoneFragment extends Fragment {
         cancel_verificate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+          /*      Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
-                getActivity().finish();
+                getActivity().finish();*/
+                Navigation.findNavController(getView())
+                        .navigate(R.id.action_verificationPhoneFragment_to_registerFragment2);
             }
         });
         sendNumberPhone.setOnClickListener(new View.OnClickListener() {

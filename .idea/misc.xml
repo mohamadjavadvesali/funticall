@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/android/project/Funtical2/app/src/main/res/drawable/bg_gradient_soft.xml" value="0.28177083333333336" />
+        <entry key="..\:/android/project/Funtical2/app/src/main/res/drawable/btn_rounded_primary.xml" value="0.2574074074074074" />
         <entry key="..\:/android/project/Funtical2/app/src/main/res/drawable/btn_rounded_red.xml" value="0.2774358974358974" />
         <entry key="..\:/android/project/Funtical2/app/src/main/res/drawable/ic_attach_file.xml" value="0.28177083333333336" />
         <entry key="..\:/android/project/Funtical2/app/src/main/res/drawable/ic_comment.xml" value="0.2774358974358974" />
@@ -22,6 +23,7 @@
         <entry key="..\:/android/project/Funtical2/app/src/main/res/layout/fragment_comment_post.xml" value="0.265625" />
         <entry key="..\:/android/project/Funtical2/app/src/main/res/layout/fragment_home.xml" value="0.19202898550724637" />
         <entry key="..\:/android/project/Funtical2/app/src/main/res/layout/fragment_login_in.xml" value="0.26153846153846155" />
+        <entry key="..\:/android/project/Funtical2/app/src/main/res/layout/fragment_register.xml" value="0.25" />
         <entry key="..\:/android/project/Funtical2/app/src/main/res/layout/fragment_sign_in.xml" value="0.33" />
         <entry key="..\:/android/project/Funtical2/app/src/main/res/layout/fragment_sign_in2.xml" value="0.25" />
         <entry key="..\:/android/project/Funtical2/app/src/main/res/layout/fragment_verification_code.xml" value="0.25" />

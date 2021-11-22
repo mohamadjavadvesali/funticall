@@ -4,19 +4,39 @@
     android:id="@+id/signinnavigation"
     app:startDestination="@id/verificationPhoneFragment">
     <fragment
-        android:id="@+id/verificationPhoneFragment"
-        android:name="com.fntl.app.view.Signup.VerificationPhoneFragment"
-        android:label="VerificationPhoneFragment">
-        <action
-            android:id="@+id/action_verificationPhoneFragment_to_verificationCodeFragment"
-            app:destination="@id/verificationCodeFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/verificationCodeFragment"
-        android:name="com.fntl.app.view.Signup.VerificationCodeFragment"
-        android:label="VerificationCodeFragment">
+        android:name="com.fntl.app.view.Sign_up_in.VerificationCodeFragment"
+        android:label="VerificationCodeFragment" >
         <action
             android:id="@+id/action_verificationCodeFragment_to_verificationPhoneFragment"
             app:destination="@id/verificationPhoneFragment" />
+        <action
+            android:id="@+id/action_verificationCodeFragment_to_registerFragment2"
+            app:destination="@id/registerFragment2" />
+        <action
+            android:id="@+id/action_verificationCodeFragment_to_registerFragment22"
+            app:destination="@id/registerFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationPhoneFragment"
+        android:name="com.fntl.app.view.Sign_up_in.VerificationPhoneFragment"
+        android:label="VerificationPhoneFragment" >
+        <action
+            android:id="@+id/action_verificationPhoneFragment_to_verificationCodeFragment"
+            app:destination="@id/verificationCodeFragment" />
+        <action
+            android:id="@+id/action_verificationPhoneFragment_to_registerFragment2"
+            app:destination="@id/registerFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment2"
+        android:name="com.fntl.app.view.Sign_up_in.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment2_to_verificationPhoneFragment"
+            app:destination="@id/verificationPhoneFragment" />
+        <action
+            android:id="@+id/action_registerFragment2_to_verificationCodeFragment"
+            app:destination="@id/verificationCodeFragment" />
     </fragment>
 </navigation>

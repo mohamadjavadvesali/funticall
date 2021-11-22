@@ -9,19 +9,8 @@
         android:name="com.fntl.app.view.Home.HomeFragment"
         android:label="HomeFragment">
         <action
-            android:id="@+id/action_homeFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_commentPostFragment"
             app:destination="@id/commentPostFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/accountFragment"
-        android:name="com.fntl.app.view.AccountFragment"
-        android:label="AccountFragment">
-        <action
-            android:id="@+id/action_accountFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/commentPostFragment"

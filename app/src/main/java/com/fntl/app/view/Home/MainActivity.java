@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -15,7 +16,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.fntl.app.R;
 import com.fntl.app.databinding.ActivityMainBinding;
-import com.fntl.app.view.Signup.SignInActivity;
+import com.fntl.app.view.Sign_up_in.SignInActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 startActivity(intent);
             }
         });
-    }
+      }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -59,5 +60,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return false;
     }
 
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        return super.onSupportNavigateUp();
+    }
 }
