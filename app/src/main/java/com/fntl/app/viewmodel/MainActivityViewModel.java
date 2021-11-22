@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.fntl.app.model.Comment;
 import com.fntl.app.model.PostModel;
+import com.fntl.app.model.Post_Model;
 import com.fntl.app.model.ResponseModel;
 import com.fntl.app.model.Token;
 import com.fntl.app.utils.Api.Repository;
@@ -31,7 +32,7 @@ public class MainActivityViewModel extends ViewModel {
 
     }
 
-    public LiveData<List<Comment>> get_Commment_Post() {
+    public LiveData<List<Post_Model>> get_Commment_Post() {
         return Repository.getInstance().get_Comment(disposable);
 
     }

@@ -1,7 +1,7 @@
 package com.fntl.app.utils.Api;
 
-import com.fntl.app.model.Comment;
 import com.fntl.app.model.PostModel;
+import com.fntl.app.model.Post_Model;
 import com.fntl.app.model.ResponseModel;
 import com.fntl.app.model.Token;
 import com.fntl.app.model.UserPhoneModel;
@@ -10,9 +10,11 @@ import com.fntl.app.model.VerificationCodeModel;
 import java.util.List;
 
 import io.reactivex.rxjava3.core.Single;
+import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface Api {
@@ -27,6 +29,8 @@ public interface Api {
     Single<Token> get_Token(@Body VerificationCodeModel verificationCodeModel);
 
 
-    @GET("Core/api/v1/Comment/Global/0")
-    Single<List<Comment>> getComment_post(@Query("relatedTableEnum") int relatedTableEnum);
+    @GET("/Core/api/v{version}/Comment/Global/{id}")
+    Call<List<Post_Model>> get_Posts_comment(@Path("version") int version,
+                                             @Path("id") int id,
+                                             @Query("relatedTableEnum") int relatedTableEnum);
 }

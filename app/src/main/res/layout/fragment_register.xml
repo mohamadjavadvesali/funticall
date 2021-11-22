@@ -25,13 +25,13 @@
                 android:orientation="vertical"
                 android:padding="@dimen/spacing_mlarge">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/spacing_middle"
                     android:layout_marginBottom="@dimen/spacing_xlarge"
-                    android:text="SIGN IN"
+                    android:src="@drawable/logo"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:textColor="@color/green_500"
                     android:textStyle="bold" />
@@ -42,7 +42,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-4dp"
                     android:layout_marginRight="-4dp"
-                    android:hint="نام ونام خانوادگی"
+                    android:hint="نام ونام خانوادگی"                    android:fontFamily="@font/dana_fanum_medium"
+
                     android:inputType="text"
                     android:maxLength="50"
                     android:maxLines="1"
@@ -62,7 +63,6 @@
                     android:layout_marginRight="-4dp"
                     android:fontFamily="@font/dana_fanum_medium"
                     android:hint="ایمیل"
-                    android:inputType="textPassword"
                     android:maxLength="50"
                     android:maxLines="1"
 
@@ -73,6 +73,7 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="@dimen/spacing_mlarge" />
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -81,7 +82,6 @@
                     android:layout_marginRight="-4dp"
                     android:fontFamily="@font/dana_fanum_medium"
                     android:hint="موبایل"
-                    android:inputType="textPassword"
                     android:maxLength="50"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -92,7 +92,6 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="@dimen/spacing_mlarge" />
-
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -101,7 +100,6 @@
                     android:layout_marginRight="-4dp"
                     android:fontFamily="@font/dana_fanum_medium"
                     android:hint="توضیحات"
-                    android:inputType="textPassword"
                     android:maxLength="50"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -121,7 +119,6 @@
                     android:layout_marginRight="-4dp"
                     android:fontFamily="@font/dana_fanum_medium"
                     android:hint="آدرس شرکت"
-                    android:inputType="textPassword"
                     android:maxLength="50"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -139,7 +136,8 @@
                     android:layout_marginLeft="-4dp"
                     android:layout_marginRight="-4dp"
                     android:background="@drawable/btn_rounded_primary"
-                    android:text="ثبت نام"
+                    android:text="ثبت نام"                    android:fontFamily="@font/dana_fanum_medium"
+
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
@@ -157,7 +155,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="true"
-                        android:text="ورود"
+                        android:text="ورود"                    android:fontFamily="@font/dana_fanum_medium"
+
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                         android:textColor="@color/colorPrimaryLight"
                         android:textStyle="bold" />
@@ -165,7 +164,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ثبت نام کرده ام !"
+                        android:text="ثبت نام کرده ام !"                    android:fontFamily="@font/dana_fanum_medium"
+
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                         android:textColor="@color/blue_grey_300" />
 

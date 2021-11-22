@@ -3,8 +3,9 @@ package com.fntl.app.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
 
-public class Child {
+public class Datum {
 
     @SerializedName("id")
     @Expose
@@ -50,10 +51,10 @@ public class Child {
     private Object parentId;
     @SerializedName("images")
     @Expose
-    private Object images;
+    private List<Image> images = null;
     @SerializedName("children")
     @Expose
-    private Object children;
+    private List<Child> children = null;
 
     public Integer getId() {
         return id;
@@ -167,21 +168,20 @@ public class Child {
         this.parentId = parentId;
     }
 
-    public Object getImages() {
+    public List<Image> getImages() {
         return images;
     }
 
-    public void setImages(Object images) {
+    public void setImages(List<Image> images) {
         this.images = images;
     }
 
-    public Object getChildren() {
+    public List<Child> getChildren() {
         return children;
     }
 
-    public void setChildren(Object children) {
+    public void setChildren(List<Child> children) {
         this.children = children;
     }
 
 }
-

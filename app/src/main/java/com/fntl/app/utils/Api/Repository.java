@@ -5,8 +5,8 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.fntl.app.model.Comment;
 import com.fntl.app.model.PostModel;
+import com.fntl.app.model.Post_Model;
 import com.fntl.app.model.ResponseModel;
 import com.fntl.app.model.Token;
 import com.fntl.app.model.UserPhoneModel;
@@ -20,6 +20,9 @@ import io.reactivex.rxjava3.core.SingleObserver;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Repository {
     private static final String TAG = "repository_Log";
@@ -111,27 +114,21 @@ public class Repository {
     }
 
 
-    public LiveData<List<Comment>> get_Comment(CompositeDisposable disposable) {
-        MutableLiveData<List<Comment>> liveData = new MutableLiveData<>();
-        RetrofitInstance.getInstance().getComment_post(7)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<List<Comment>>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-                        disposable.add(d);
-                    }
+    public LiveData<List<Post_Model>> get_Comment(CompositeDisposable disposable) {
+        MutableLiveData<List<Post_Model>> liveData = new MutableLiveData<>();
+        RetrofitInstance.getInstance().get_Posts_comment(1, 0, 7).enqueue(new Callback<List<Post_Model>>() {
+            @Override
+            public void onResponse(Call<List<Post_Model>> call, Response<List<Post_Model>> response) {
+                liveData.setValue(response.body());
+                Log.i(TAG, "onResponse: "+response.code());
+            }
 
-                    @Override
-                    public void onSuccess(@NonNull List<Comment> comments) {
-                        liveData.setValue(comments);
-                    }
+            @Override
+            public void onFailure(Call<List<Post_Model>> call, Throwable t) {
+                Log.i(TAG, "onFailure: " + t.fillInStackTrace());
+            }
+        });
 
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        Log.i(TAG, "onError: " + e.fillInStackTrace());
-                    }
-                });
         return liveData;
     }
 }
