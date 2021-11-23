@@ -12,5 +12,36 @@
     <string name="label_view_more">بیشتر</string>
     <string name="lorm">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="adress">آدرس منزل/ شرکت</string>
+    <string name="description">توضیحات</string>
+    <string name="companyname">نام شرکت</string>
+    <string name="fullname">نام ونام خانوادگی</string>
+    <string name="email">ایمیل</string>
+    <string name="message">پیام</string>
+    <string name="whats">whats on your mind?</string>
+    <string name="todo">TODO</string>
+    <string name="haghigi">حقیقی</string>
+    <string name="hogoghi">حقوقی</string>
+    <string name="loinging">ثبت نام کرده ام !</string>
+    <string name="ok">تایید کنید</string>
+    <string name="edit_number">ویرایش شماره تلفن همراه</string>
+    <string name="entermobile">شماره خود را تأیید کنید</string>
+    <string name="aa">لطفا شماره موبایل خود را برای دریافت کد تایید وارد کنید.</string>
+    <string name="next">ادامه</string>
+    <string name="notime">نه، زمان دیگر</string>
+    <string name="time">02:30</string>
+    <string name="avatar">آواتار</string>
+    <string name="share">اشتراک گذاری</string>
+    <string name="Comment">کامنت</string>
+    <string name="like">لایک</string>
+
+
+
+    <string name="nameejabr">نام و نام خانوادگی الزامی است</string>
+    <string name="okay">عملیات با موفقیت انجام شد</string>
+    <string name="beyn2.100">ام و نام خانوادگی باید بین 2 تا 100 کاراکتر باشد</string>
+    <string name="mobileedi">شماره موبایل را به صورت صحیح وارد کنید</string>
+    <string name="emailedi">ایمیل را به صورت صحیح وارد کنید</string>
+
+
 </resources>

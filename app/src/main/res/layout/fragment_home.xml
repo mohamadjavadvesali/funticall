@@ -36,7 +36,8 @@
                     app:srcCompat="@drawable/avatar_default"
                     app:tint="@color/grey_60"
 
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:focusable="true" />
 
                 <TextView
                     android:id="@+id/et_search"
@@ -46,8 +47,7 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:gravity="start|center"
-                    android:hint="whats on your mind?"
-                    android:imeOptions="actionSearch"
+                    android:hint="@string/whats"
                     android:maxLines="1"
                     android:singleLine="true">
 

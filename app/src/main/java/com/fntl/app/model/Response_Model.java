@@ -3,29 +3,28 @@ package com.fntl.app.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ResponseModel {
+import java.util.List;
 
-    @SerializedName("ErrorsObject")
-    @Expose
-    Errors ErrorsObject;
+public class Response_Model {
+
     @SerializedName("data")
     @Expose
-    private String data = null;
+    private Object data;
     @SerializedName("message")
     @Expose
     private String message;
+    @SerializedName("errors")
+    @Expose
+    private List<Error> errors = null;
     @SerializedName("metaData")
     @Expose
-    private String metaData = null;
+    private Object metaData;
 
-
-    // Getter Methods
-
-    public String getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Object data) {
         this.data = data;
     }
 
@@ -37,21 +36,21 @@ public class ResponseModel {
         this.message = message;
     }
 
-    // Setter Methods
-
-    public Errors getErrors() {
-        return ErrorsObject;
+    public List<Error> getErrors() {
+        return errors;
     }
 
-    public void setErrors(Errors errorsObject) {
-        this.ErrorsObject = errorsObject;
+    public void setErrors(List<Error> errors) {
+        this.errors = errors;
     }
 
-    public String getMetaData() {
+    public Object getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(String metaData) {
+    public void setMetaData(Object metaData) {
         this.metaData = metaData;
     }
+
 }
+

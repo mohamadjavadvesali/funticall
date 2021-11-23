@@ -7,7 +7,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.Post_Model;
-import com.fntl.app.model.ResponseModel;
+import com.fntl.app.model.RegisterModel;
+import com.fntl.app.model.Response_Model;
 import com.fntl.app.model.Token;
 import com.fntl.app.model.UserPhoneModel;
 import com.fntl.app.model.VerificationCodeModel;
@@ -60,19 +61,44 @@ public class Repository {
         return liveData;
     }
 
-    public LiveData<ResponseModel> SignIn(String number, CompositeDisposable disposable) {
-        MutableLiveData<ResponseModel> liveData = new MutableLiveData<>();
-        RetrofitInstance.getInstance().get_Signin(new UserPhoneModel(number))
+    public LiveData<Response_Model> SignIn(String number, CompositeDisposable disposable) {
+        MutableLiveData<Response_Model> liveData = new MutableLiveData<>();
+        RetrofitInstance.getInstance().Post_Signin(new UserPhoneModel(number))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<ResponseModel>() {
+                .subscribe(new SingleObserver<Response_Model>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
                         disposable.add(d);
                     }
 
                     @Override
-                    public void onSuccess(@NonNull ResponseModel responseModel) {
+                    public void onSuccess(@NonNull Response_Model responseModel) {
+                        liveData.setValue(responseModel);
+                        Log.i(TAG, "onSuccess: " + responseModel.getMessage());
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        Log.i(TAG, "onError: " + e.getMessage());
+                    }
+                });
+        return liveData;
+    }
+
+    public LiveData<Response_Model> Register(CompositeDisposable disposable) {
+        MutableLiveData<Response_Model> liveData = new MutableLiveData<>();
+        RetrofitInstance.getInstance().Post_register(new RegisterModel())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<Response_Model>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable.add(d);
+                    }
+
+                    @Override
+                    public void onSuccess(@NonNull Response_Model responseModel) {
                         liveData.setValue(responseModel);
                         Log.i(TAG, "onSuccess: " + responseModel.getMessage());
                     }
@@ -89,7 +115,7 @@ public class Repository {
         MutableLiveData<Token> liveData = new MutableLiveData<>();
 
         VerificationCodeModel verificationCodeModel = new VerificationCodeModel(number, code, platform, version, deviceid);
-        RetrofitInstance.getInstance().get_Token(verificationCodeModel)
+        RetrofitInstance.getInstance().Post_Token(verificationCodeModel)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<Token>() {

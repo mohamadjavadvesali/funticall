@@ -2,7 +2,8 @@ package com.fntl.app.utils.Api;
 
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.Post_Model;
-import com.fntl.app.model.ResponseModel;
+import com.fntl.app.model.RegisterModel;
+import com.fntl.app.model.Response_Model;
 import com.fntl.app.model.Token;
 import com.fntl.app.model.UserPhoneModel;
 import com.fntl.app.model.VerificationCodeModel;
@@ -23,13 +24,17 @@ public interface Api {
     Single<List<PostModel>> getPosts(@Query("pageIndex") int page);
 
     @POST("Core/api/v1/Account/SignIn")
-    Single<ResponseModel> get_Signin(@Body UserPhoneModel userPhoneModel);
+    Single<Response_Model> Post_Signin(@Body UserPhoneModel userPhoneModel);
 
     @POST("Core/api/v1/Account/SignInVerification")
-    Single<Token> get_Token(@Body VerificationCodeModel verificationCodeModel);
+    Single<Token> Post_Token(@Body VerificationCodeModel verificationCodeModel);
 
 
-    @GET("/Core/api/v{version}/Comment/Global/{id}")
+    @POST("Core/api/v1/Account/Register")
+    Single<Response_Model> Post_register(@Body RegisterModel registerModel);
+
+
+    @GET("Core/api/v{version}/Comment/Global/{id}")
     Call<List<Post_Model>> get_Posts_comment(@Path("version") int version,
                                              @Path("id") int id,
                                              @Query("relatedTableEnum") int relatedTableEnum);

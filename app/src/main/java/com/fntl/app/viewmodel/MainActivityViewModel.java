@@ -3,10 +3,9 @@ package com.fntl.app.viewmodel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.fntl.app.model.Comment;
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.Post_Model;
-import com.fntl.app.model.ResponseModel;
+import com.fntl.app.model.Response_Model;
 import com.fntl.app.model.Token;
 import com.fntl.app.utils.Api.Repository;
 
@@ -22,13 +21,18 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
-    public LiveData<ResponseModel> get_Users(String number) {
+    public LiveData<Response_Model> get_Users(String number) {
         return Repository.getInstance().SignIn(number, disposable);
 
     }
 
     public LiveData<Token> get_verification(String number, String code, int platform, String version, String deviceid) {
         return Repository.getInstance().Verification(number, code, platform, version, deviceid, disposable);
+
+    }
+
+    public LiveData<Response_Model> post_register(int id) {
+        return Repository.getInstance().Register(disposable);
 
     }
 

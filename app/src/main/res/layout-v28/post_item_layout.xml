@@ -69,7 +69,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/dana_fanum_bold"
                                 android:text="@{model.fullName}"
-                                android:textSize="16sp" />
+                                android:textFontWeight="@integer/config_navAnimTime"
+                                android:textSize="16dp" />
 
                             <TextView
                                 setDate="@{model.createdDate}"
@@ -77,7 +78,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="5dp"
                                 android:fontFamily="@font/dana_fanum_light"
-                                android:textSize="14sp" />
+                                android:textFontWeight="@integer/config_navAnimTime"
+                                android:textSize="14dp" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -89,15 +91,15 @@
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/dana_fanum_regular"
                         android:text="@{model.content}"
-                        android:textSize="16sp" />
+                        android:textSize="16dp" />
 
                     <ImageView
                         android:id="@+id/imageView2"
                         setImage="@{model.images[0].fileId}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:contentDescription="@string/todo" />
+                        android:layout_below="@+id/content_area"
+                        android:layout_marginHorizontal="10dp" />
                 </LinearLayout>
 
                 <View
@@ -147,8 +149,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:weightSum="3"
-                        android:baselineAligned="false">
+                        android:weightSum="3">
 
                         <LinearLayout
                             android:id="@+id/post_like_linear"
@@ -160,17 +161,17 @@
 
                             <ImageView
                                 android:id="@+id/post_like"
+
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="?attr/selectableItemBackgroundBorderless"
-                                app:srcCompat="@drawable/ic_favorite_border"
-                                android:contentDescription="todo" />
+                                app:srcCompat="@drawable/ic_favorite_border" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/dana_fanum_medium"
-                                android:text="@string/like"
+                                android:text="لایک"
                                 android:textColor="@color/grey_60" />
                         </LinearLayout>
 
@@ -190,14 +191,13 @@
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:clickable="false"
                                 app:srcCompat="@drawable/ic_comment"
-                                app:tint="@color/grey_60"
-                                android:contentDescription="todo" />
+                                app:tint="@color/grey_60" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/dana_fanum_medium"
-                                android:text="@string/Comment"
+                                android:text="کامنت"
 
                                 android:textColor="@color/grey_60" />
                         </LinearLayout>
@@ -216,15 +216,14 @@
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:clickable="false"
                                 app:srcCompat="@drawable/ic_share"
-                                app:tint="@color/grey_60"
-                                android:contentDescription="@string/todo" />
+                                app:tint="@color/grey_60" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/dana_fanum_medium"
 
-                                android:text="@string/share"
+                                android:text="اشتراک گذاری"
                                 android:textColor="@color/grey_60" />
                         </LinearLayout>
 

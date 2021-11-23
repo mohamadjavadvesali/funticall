@@ -3,7 +3,8 @@ package com.fntl.app.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Errors {
+public class Error {
+
     @SerializedName("errorMessage")
     @Expose
     private String errorMessage;
@@ -13,9 +14,6 @@ public class Errors {
     @SerializedName("field")
     @Expose
     private String field;
-
-
-    // Getter Methods
 
     public String getErrorMessage() {
         return errorMessage;
@@ -29,8 +27,6 @@ public class Errors {
         return code;
     }
 
-    // Setter Methods
-
     public void setCode(String code) {
         this.code = code;
     }
@@ -42,4 +38,5 @@ public class Errors {
     public void setField(String field) {
         this.field = field;
     }
+
 }
