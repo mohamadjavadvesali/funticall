@@ -12,19 +12,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
     private static final String BASE_URL = "https://api.funtical.app/";
-    public static OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
-        @Override
-        public Response intercept(Chain chain) throws IOException {
-            Request newRequest = chain.request().newBuilder()
 
-                    .addHeader("Authorize", "Bearer " + "2772a432-bb00-4d9d-a41c-28da6d954914")
-                    .build();
-            return chain.proceed(newRequest);
-        }
-    }).build();
     private static Retrofit instance = null;
 
-    public static synchronized Api getInstance() {
+    public static  Api getInstance() {
         if (instance == null) {
             instance = new Retrofit.Builder().baseUrl(BASE_URL)
                     .addCallAdapterFactory(RxJava3CallAdapterFactory.create())

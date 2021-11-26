@@ -15,10 +15,10 @@ public class Response_Model {
     private String message;
     @SerializedName("errors")
     @Expose
-    private List<Error> errors = null;
+    private List<Error> errors;
     @SerializedName("metaData")
     @Expose
-    private Object metaData;
+    public Object metaData;
 
     public Object getData() {
         return data;

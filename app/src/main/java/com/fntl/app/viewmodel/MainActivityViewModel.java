@@ -31,14 +31,13 @@ public class MainActivityViewModel extends ViewModel {
 
     }
 
-    public LiveData<Response_Model> post_register(int id) {
-        return Repository.getInstance().Register(disposable);
+    public LiveData<Response_Model> post_register(String fullName, String email, String mobileNumber, Integer personType, String description, String companyName, String address) {
+        return Repository.getInstance().Register(fullName, email, mobileNumber, personType, description, companyName, address, disposable);
 
     }
 
     public LiveData<List<Post_Model>> get_Commment_Post() {
         return Repository.getInstance().get_Comment(disposable);
-
     }
 
     @Override

@@ -66,6 +66,7 @@ public class VerificationPhoneFragment extends Fragment {
                 viewModel.get_Users(mobilenumber.getText().toString()).observe(getViewLifecycleOwner(), new Observer<Response_Model>() {
                     @Override
                     public void onChanged(Response_Model response_model) {
+
                         if (response_model.getMessage().equals("عملیات با موفقیت انجام شد")) {
                             Bundle bundle = new Bundle();
                             bundle.putString("mobile_number", mobilenumber.getText().toString());

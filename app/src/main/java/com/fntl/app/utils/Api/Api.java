@@ -24,7 +24,7 @@ public interface Api {
     Single<List<PostModel>> getPosts(@Query("pageIndex") int page);
 
     @POST("Core/api/v1/Account/SignIn")
-    Single<Response_Model> Post_Signin(@Body UserPhoneModel userPhoneModel);
+    Call<Response_Model> Post_Signin(@Body UserPhoneModel userPhoneModel);
 
     @POST("Core/api/v1/Account/SignInVerification")
     Single<Token> Post_Token(@Body VerificationCodeModel verificationCodeModel);

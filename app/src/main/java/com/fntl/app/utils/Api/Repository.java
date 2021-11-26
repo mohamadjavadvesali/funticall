@@ -63,32 +63,23 @@ public class Repository {
 
     public LiveData<Response_Model> SignIn(String number, CompositeDisposable disposable) {
         MutableLiveData<Response_Model> liveData = new MutableLiveData<>();
-        RetrofitInstance.getInstance().Post_Signin(new UserPhoneModel(number))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<Response_Model>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-                        disposable.add(d);
-                    }
+        RetrofitInstance.getInstance().Post_Signin(new UserPhoneModel(number)).enqueue(new Callback<Response_Model>() {
+            @Override
+            public void onResponse(Call<Response_Model> call, Response<Response_Model> response) {
+                liveData.setValue(response.body());
+            }
 
-                    @Override
-                    public void onSuccess(@NonNull Response_Model responseModel) {
-                        liveData.setValue(responseModel);
-                        Log.i(TAG, "onSuccess: " + responseModel.getMessage());
-                    }
+            @Override
+            public void onFailure(Call<Response_Model> call, Throwable t) {
 
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        Log.i(TAG, "onError: " + e.getMessage());
-                    }
-                });
+            }
+        });
         return liveData;
     }
 
-    public LiveData<Response_Model> Register(CompositeDisposable disposable) {
+    public LiveData<Response_Model> Register(String fullName, String email, String mobileNumber, Integer personType, String description, String companyName, String address, CompositeDisposable disposable) {
         MutableLiveData<Response_Model> liveData = new MutableLiveData<>();
-        RetrofitInstance.getInstance().Post_register(new RegisterModel())
+        RetrofitInstance.getInstance().Post_register(new RegisterModel(fullName, email, mobileNumber, personType, description, companyName, address))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<Response_Model>() {
@@ -105,7 +96,7 @@ public class Repository {
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        Log.i(TAG, "onError: " + e.getMessage());
+
                     }
                 });
         return liveData;

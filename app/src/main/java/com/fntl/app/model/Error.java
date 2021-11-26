@@ -7,13 +7,16 @@ public class Error {
 
     @SerializedName("errorMessage")
     @Expose
-    private String errorMessage;
+    public String errorMessage;
+
     @SerializedName("code")
     @Expose
-    private String code;
+    public String code;
+
     @SerializedName("field")
     @Expose
-    private String field;
+    public String field;
+
 
     public String getErrorMessage() {
         return errorMessage;
