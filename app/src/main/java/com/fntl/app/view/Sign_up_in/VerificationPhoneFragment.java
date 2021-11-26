@@ -1,5 +1,6 @@
 package com.fntl.app.view.Sign_up_in;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,8 @@ import androidx.navigation.Navigation;
 import com.fntl.app.R;
 import com.fntl.app.databinding.FragmentVerificationPhoneBinding;
 import com.fntl.app.model.Response_Model;
+import com.fntl.app.utils.App;
+import com.fntl.app.view.Home.MainActivity;
 import com.fntl.app.viewmodel.MainActivityViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -52,27 +55,26 @@ public class VerificationPhoneFragment extends Fragment {
         cancel_verificate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-          /*      Intent intent = new Intent(getActivity(), MainActivity.class);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
-                getActivity().finish();*/
-                Navigation.findNavController(getView())
-                        .navigate(R.id.action_verificationPhoneFragment_to_registerFragment2);
+                getActivity().finish();
+
             }
         });
+
         sendNumberPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 viewModel.get_Users(mobilenumber.getText().toString()).observe(getViewLifecycleOwner(), new Observer<Response_Model>() {
                     @Override
                     public void onChanged(Response_Model response_model) {
-
-                        if (response_model.getMessage().equals("عملیات با موفقیت انجام شد")) {
+                        if (response_model.getErrors() == null) {
                             Bundle bundle = new Bundle();
                             bundle.putString("mobile_number", mobilenumber.getText().toString());
                             Navigation.findNavController(sendNumberPhone).navigate(R.id.action_verificationPhoneFragment_to_verificationCodeFragment, bundle);
+
                         } else {
-                            Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(App.context, "" + response_model.getErrors().get(0).getErrorMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });

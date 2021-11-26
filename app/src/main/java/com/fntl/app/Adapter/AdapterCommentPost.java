@@ -9,8 +9,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fntl.app.R;
-import com.fntl.app.model.Message;
-import com.fntl.app.model.Post_Model;
+import com.fntl.app.model.PostModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +19,13 @@ public class AdapterCommentPost extends RecyclerView.Adapter<RecyclerView.ViewHo
     private final int CHAT_ME = 100;
     private final int CHAT_YOU = 200;
     private final Context ctx;
-    private List<Post_Model> items = new ArrayList<>();
+    private List<PostModel> items = new ArrayList<>();
     private OnItemClickListener mOnItemClickListener;
 
     // Provide a suitable constructor (depends on the kind of dataset)
 
 
-    public AdapterCommentPost(Context ctx, List<Post_Model> items) {
+    public AdapterCommentPost(Context ctx, List<PostModel> items) {
         this.ctx = ctx;
         this.items = items;
     }
@@ -48,10 +47,10 @@ public class AdapterCommentPost extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
-            Post_Model m = items.get(position);
+            PostModel m = items.get(position);
             ItemViewHolder vItem = (ItemViewHolder) holder;
-            vItem.text_content.setText(m.getData().get(position).getChildren().get(0).getContent());
-            vItem.text_time.setText(m.getData().get(position).getChildren().get(0).getCreatedDate());
+          //  vItem.text_content.setText(m.getData().get(position).getChildren().get(0).getContent());
+           // vItem.text_time.setText(m.get().get(position).getChildren().get(0).getCreatedDate());
             vItem.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -74,17 +73,17 @@ public class AdapterCommentPost extends RecyclerView.Adapter<RecyclerView.ViewHo
         return position;
     }
 
-    public void insertItem(Post_Model item) {
+    public void insertItem(PostModel item) {
         this.items.add(item);
         notifyItemInserted(getItemCount());
     }
 
-    public void setItems(List<Post_Model> items) {
+    public void setItems(List<PostModel> items) {
         this.items = items;
     }
 
     public interface OnItemClickListener {
-        void onItemClick(View view, Post_Model obj, int position);
+        void onItemClick(View view, PostModel obj, int position);
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {

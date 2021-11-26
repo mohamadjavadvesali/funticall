@@ -9,7 +9,7 @@ public class Response_Model {
 
     @SerializedName("data")
     @Expose
-    private Object data;
+    private Data data;
     @SerializedName("message")
     @Expose
     private String message;
@@ -20,11 +20,11 @@ public class Response_Model {
     @Expose
     public Object metaData;
 
-    public Object getData() {
+    public Data getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(Data data) {
         this.data = data;
     }
 

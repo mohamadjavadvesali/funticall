@@ -63,7 +63,7 @@
                     android:fontFamily="@font/dana_fanum_medium"
                     android:hint="0912*******"
 
-                    android:inputType="phone"
+                    android:inputType="textAutoCorrect|number|textPhonetic|phone"
                     android:maxEms="11"
                     android:maxLength="11"
                     android:maxLines="1"

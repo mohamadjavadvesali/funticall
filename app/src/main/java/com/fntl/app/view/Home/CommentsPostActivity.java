@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fntl.app.Adapter.AdapterCommentPost;
 import com.fntl.app.R;
 import com.fntl.app.databinding.ActivityCommentsPostBinding;
-import com.fntl.app.model.Post_Model;
+import com.fntl.app.model.PostModel;
 import com.fntl.app.viewmodel.MainActivityViewModel;
 
 import java.util.List;
@@ -48,11 +48,11 @@ public class CommentsPostActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recycler_view.setLayoutManager(layoutManager);
         recycler_view.setHasFixedSize(true);
-        viewModel.get_Commment_Post().observe(this, new Observer<List<Post_Model>>() {
+        viewModel.get_Commment_Post().observe(this, new Observer<List<PostModel>>() {
             @Override
-            public void onChanged(List<Post_Model> post_models) {
-                Toast.makeText(getApplicationContext(), "" + post_models.get(0).getData().get(0).getContent(), Toast.LENGTH_SHORT).show();
-                Log.i("TAG", "onChanged: " + post_models.get(0).getData().get(0).getContent());
+            public void onChanged(List<PostModel> post_models) {
+            //    Toast.makeText(getApplicationContext(), "" + post_models.get(0).getData().get(0).getContent(), Toast.LENGTH_SHORT).show();
+            //    Log.i("TAG", "onChanged: " + post_models.get(0).getData().get(0).getContent());
             }
         });
         // adapter = new AdapterCommentPost(getApplicationContext(), post_models);
