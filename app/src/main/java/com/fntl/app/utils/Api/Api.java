@@ -3,6 +3,7 @@ package com.fntl.app.utils.Api;
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.RegisterModel;
 import com.fntl.app.model.Response_Model;
+import com.fntl.app.model.Response_post_Model;
 import com.fntl.app.model.UserPhoneModel;
 import com.fntl.app.model.VerificationCodeModel;
 
@@ -29,11 +30,11 @@ public interface Api {
 
 
     @POST("Core/api/v1/Account/Register")
-    Single<Response_Model> Post_register(@Body RegisterModel registerModel);
+    Call<Response_Model> Post_register(@Body RegisterModel registerModel);
 
 
-    @GET("Core/api/v{version}/Comment/Global/{id}")
-    Call<List<PostModel>> get_Posts_comment(@Path("version") int version,
-                                             @Path("id") int id,
-                                             @Query("relatedTableEnum") int relatedTableEnum);
+   // @GET("Core/api/v{version}/Comment/Global/{id}")
+    //Call<List<Response_post_Model>> get_Posts_comment(@Path("version") int version,
+      //                                                @Path("id") int id,
+         //                                             @Query("relatedTableEnum") int relatedTableEnum);
 }

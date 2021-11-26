@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.fntl.app.model.PostModel;
 import com.fntl.app.model.Response_Model;
+import com.fntl.app.model.Response_post_Model;
 import com.fntl.app.utils.Api.Repository;
 
 import java.util.List;
@@ -34,9 +35,9 @@ public class MainActivityViewModel extends ViewModel {
 
     }
 
-    public LiveData<List<PostModel>> get_Commment_Post() {
-        return Repository.getInstance().get_Comment(disposable);
-    }
+//    public LiveData<List<PostModel>> get_Commment_Post() {
+  //      return Repository.getInstance().get_Comment(disposable);
+  //  }
 
     @Override
     protected void onCleared() {

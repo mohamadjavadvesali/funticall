@@ -51,8 +51,6 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,20 +58,13 @@ public class RegisterFragment extends Fragment {
                     check_btn = 1;
                 } else {
                     check_btn = 2;
-
                 }
-                viewModel.post_register(String.valueOf(binding.fullName), String.valueOf(binding.email),
-                        String.valueOf(binding.mobileNumber), check_btn, String.valueOf(binding.description)
-                        , String.valueOf(binding.companyName), String.valueOf(binding.address)
-
-                ).observe(getViewLifecycleOwner(), new Observer<Response_Model>() {
+                viewModel.post_register(String.valueOf(binding.fullName), String.valueOf(binding.email), String.valueOf(binding.mobileNumber), check_btn, String.valueOf(binding.description)
+                        , String.valueOf(binding.companyName), String.valueOf(binding.address)).observe(getViewLifecycleOwner(), new Observer<Response_Model>() {
                     @Override
                     public void onChanged(Response_Model response_model) {
-                        Log.i(TAG, "onChanged: "+response_model);
+                        Log.i(TAG, "onChanged: "+response_model.getData());
                     }
-
-
-
                 });
 
             }

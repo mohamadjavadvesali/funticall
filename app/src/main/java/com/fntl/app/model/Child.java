@@ -3,16 +3,14 @@ package com.fntl.app.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+public class Child {
 
-public class PostModel {
     @SerializedName("id")
     @Expose
-    private long id;
-
+    private Integer id;
     @SerializedName("personId")
     @Expose
-    private long personId;
+    private Integer personId;
     @SerializedName("fullName")
     @Expose
     private String fullName;
@@ -51,43 +49,24 @@ public class PostModel {
     private long parentId;
     @SerializedName("images")
     @Expose
-    private List<Image> images = null;
+    private Object images;
     @SerializedName("children")
     @Expose
-    private List<Child> children = null;
+    private Object children;
 
-
-    public PostModel(long id, long personId, String fullName, String content, String createdDate, boolean isLikeByCurrentPerson, int likesCount, boolean isDisLikeByCurrentPerson, int disLikesCount, int commentCount, String avatar, int membershipTypeEnum, String membershipTypeTitle, long parentId, List<Image> images) {
-        this.id = id;
-        this.personId = personId;
-        this.fullName = fullName;
-        this.content = content;
-        this.createdDate = createdDate;
-        this.isLikeByCurrentPerson = isLikeByCurrentPerson;
-        this.likesCount = likesCount;
-        this.isDisLikeByCurrentPerson = isDisLikeByCurrentPerson;
-        this.disLikesCount = disLikesCount;
-        this.commentCount = commentCount;
-        this.avatar = avatar;
-        this.membershipTypeEnum = membershipTypeEnum;
-        this.membershipTypeTitle = membershipTypeTitle;
-        this.parentId = parentId;
-        this.images = images;
-    }
-
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public long getPersonId() {
+    public Integer getPersonId() {
         return personId;
     }
 
-    public void setPersonId(long personId) {
+    public void setPersonId(Integer personId) {
         this.personId = personId;
     }
 
@@ -187,19 +166,19 @@ public class PostModel {
         this.parentId = parentId;
     }
 
-    public List<Image> getImages() {
+    public Object getImages() {
         return images;
     }
 
-    public void setImages(List<Image> images) {
+    public void setImages(Object images) {
         this.images = images;
     }
 
-    public List<Child> getChildren() {
+    public Object getChildren() {
         return children;
     }
 
-    public void setChildren(List<Child> children) {
+    public void setChildren(Object children) {
         this.children = children;
     }
 }

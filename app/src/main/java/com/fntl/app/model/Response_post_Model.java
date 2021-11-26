@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Response_Model {
+public class Response_post_Model {
 
     @SerializedName("data")
     @Expose
-    private Data data;
+    private List<PostModel> post_data;
     @SerializedName("message")
     @Expose
     private String message;
@@ -20,13 +20,12 @@ public class Response_Model {
     @Expose
     public MetaData metaData;
 
-
-    public Data getData() {
-        return data;
+    public List<PostModel> getPost_data() {
+        return post_data;
     }
 
-    public void setData(Data data) {
-        this.data = data;
+    public void setPost_data(List<PostModel> post_data) {
+        this.post_data = post_data;
     }
 
     public String getMessage() {

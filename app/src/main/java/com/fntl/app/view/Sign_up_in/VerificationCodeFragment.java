@@ -1,6 +1,7 @@
 package com.fntl.app.view.Sign_up_in;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,8 +66,10 @@ public class VerificationCodeFragment extends Fragment {
                     @Override
                     public void onChanged(Response_Model response) {
                         if (response.getErrors() == null) {
-                            Toast.makeText(getActivity(), "عملیات با موفقیت انجام شد..." + response.getData().getToken(), Toast.LENGTH_SHORT).show();
-                        } else if (response.getErrors().get(0).getErrorMessage().equals("کابر مورد نظر یافت نشد")) {
+                            Log.i(TAG, "onChanged: ");
+                            Toast.makeText(getActivity(), "عملیات با موفقیت انجام شد..." + response.getData().getToken()
+                                    , Toast.LENGTH_SHORT).show();
+                        } else if (response.getErrors().get(0).getErrorMessage().equals("کابر مورد نظر یافت نشد") | response.getErrors().get(0).getErrorMessage().equals("کاربر مورد نظر یافت نشد")) {
                             Toast.makeText(getActivity(), "" + response.getErrors().get(0).getErrorMessage(), Toast.LENGTH_SHORT).show();
                             Navigation.findNavController(view)
                                     .navigate(R.id.action_verificationCodeFragment_to_registerFragment2);

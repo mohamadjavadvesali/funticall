@@ -48,13 +48,13 @@ public class CommentsPostActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recycler_view.setLayoutManager(layoutManager);
         recycler_view.setHasFixedSize(true);
-        viewModel.get_Commment_Post().observe(this, new Observer<List<PostModel>>() {
-            @Override
-            public void onChanged(List<PostModel> post_models) {
-            //    Toast.makeText(getApplicationContext(), "" + post_models.get(0).getData().get(0).getContent(), Toast.LENGTH_SHORT).show();
+      //  viewModel.get_Commment_Post().observe(this, new Observer<List<PostModel>>() {
+   //         @Override
+    //        public void onChanged(List<PostModel> post_models) {
+    //        //    Toast.makeText(getApplicationContext(), "" + post_models.get(0).getData().get(0).getContent(), Toast.LENGTH_SHORT).show();
             //    Log.i("TAG", "onChanged: " + post_models.get(0).getData().get(0).getContent());
-            }
-        });
+    //        }
+    //    });
         // adapter = new AdapterCommentPost(getApplicationContext(), post_models);
         //   recycler_view.setAdapter(adapter);
 
