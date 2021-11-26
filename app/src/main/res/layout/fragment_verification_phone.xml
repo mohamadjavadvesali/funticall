@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,7 +62,7 @@
                     android:fontFamily="@font/dana_fanum_medium"
                     android:hint="0912*******"
 
-                    android:inputType="textAutoCorrect|number|textPhonetic|phone"
+                    android:inputType="phone"
                     android:maxEms="11"
                     android:maxLength="11"
                     android:maxLines="1"

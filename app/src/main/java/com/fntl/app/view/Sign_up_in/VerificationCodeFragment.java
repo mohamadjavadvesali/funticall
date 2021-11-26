@@ -66,7 +66,9 @@ public class VerificationCodeFragment extends Fragment {
                     public void onChanged(Response_Model response) {
                         if (response.getErrors() == null) {
                             Toast.makeText(getActivity(), "عملیات با موفقیت انجام شد..." + response.getData().getToken(), Toast.LENGTH_SHORT).show();
-                            Navigation.findNavController(button)
+                        } else if (response.getErrors().get(0).getErrorMessage().equals("کابر مورد نظر یافت نشد")) {
+                            Toast.makeText(getActivity(), "" + response.getErrors().get(0).getErrorMessage(), Toast.LENGTH_SHORT).show();
+                            Navigation.findNavController(view)
                                     .navigate(R.id.action_verificationCodeFragment_to_registerFragment2);
                         } else {
                             Toast.makeText(getActivity(), "" + response.getErrors().get(0).getErrorMessage(), Toast.LENGTH_SHORT).show();
