@@ -69,7 +69,7 @@ public class VerificationCodeFragment extends Fragment {
                             Log.i(TAG, "onChanged: ");
                             Toast.makeText(getActivity(), "عملیات با موفقیت انجام شد..." + response.getData().getToken()
                                     , Toast.LENGTH_SHORT).show();
-                        } else if (response.getErrors().get(0).getErrorMessage().equals("کابر مورد نظر یافت نشد") | response.getErrors().get(0).getErrorMessage().equals("کاربر مورد نظر یافت نشد")) {
+                        } else if (response.getErrors().get(0).getErrorMessage().equals("کابر مورد نظر یافت نشد") && response.getErrors().get(0).getErrorMessage().equals("کاربر مورد نظر یافت نشد")) {
                             Toast.makeText(getActivity(), "" + response.getErrors().get(0).getErrorMessage(), Toast.LENGTH_SHORT).show();
                             Navigation.findNavController(view)
                                     .navigate(R.id.action_verificationCodeFragment_to_registerFragment2);

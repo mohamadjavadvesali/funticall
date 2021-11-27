@@ -11,7 +11,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/banner_mind"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
 
             android:layout_marginBottom="@dimen/spacing_medium"
             android:clipToPadding="false"
@@ -24,39 +24,79 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
 
-                <com.mikhaellopez.circularimageview.CircularImageView
-                    android:layout_width="?attr/actionBarSize"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@android:color/transparent"
-                    android:clickable="true"
-                    app:civ_shadow_radius="@integer/config_navAnimTime"
-                    app:srcCompat="@drawable/avatar_default"
-                    app:tint="@color/grey_60"
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/circularImageView"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"
 
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:focusable="true" />
+                        android:layout_marginStart="5dp"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:civ_shadow_radius="@integer/config_navAnimTime"
 
-                <TextView
-                    android:id="@+id/et_search"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="start|center"
-                    android:hint="@string/whats"
-                    android:maxLines="1"
-                    android:singleLine="true">
+                        app:srcCompat="@drawable/avatar_default"
+                        app:tint="@color/grey_60"
+                        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
+                    <com.uncopt.android.widget.text.justify.JustifiedTextView
+                        android:id="@+id/et_search"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_marginStart="13dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/dana_fanum_light"
+                        android:gravity="start|center"
+                        android:hint="@string/addposttitle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/circularImageView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextContrastCheck">
 
-                    <requestFocus />
+                        <requestFocus />
+                    </com.uncopt.android.widget.text.justify.JustifiedTextView>
+                </LinearLayout>
 
-                </TextView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
+                    <Button
+                        android:id="@+id/addAnalysis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="66dp"
+                        android:layout_marginEnd="3dp"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:text="تحلیل"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/et_search"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent" />
 
+                    <Button
+                        android:id="@+id/add_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:text="پست"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/et_search"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent" />
+                </LinearLayout>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

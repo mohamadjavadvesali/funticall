@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,8 +34,6 @@ public class RegisterFragment extends Fragment {
     public RegisterFragment() {
 
     }
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -59,14 +58,28 @@ public class RegisterFragment extends Fragment {
                 } else {
                     check_btn = 2;
                 }
-                viewModel.post_register(String.valueOf(binding.fullName), String.valueOf(binding.email), String.valueOf(binding.mobileNumber), check_btn, String.valueOf(binding.description)
-                        , String.valueOf(binding.companyName), String.valueOf(binding.address)).observe(getViewLifecycleOwner(), new Observer<Response_Model>() {
+                String fullName = binding.fullName.getText().toString();
+                String email = binding.email.getText().toString();
+                String mobileNumber = binding.mobileNumber.getText().toString();
+                String description = binding.description.getText().toString();
+                String companyName = binding.companyName.getText().toString();
+                String address = binding.address.getText().toString();
+
+                Log.i(TAG, "onClick: " + fullName);
+                viewModel.post_register(fullName, email, mobileNumber, check_btn, description
+                        , companyName, address).observe(getViewLifecycleOwner(), new Observer<Response_Model>() {
                     @Override
                     public void onChanged(Response_Model response_model) {
-                        Log.i(TAG, "onChanged: "+response_model.getData());
+                        if (response_model.getErrors() == null) {
+                            Toast.makeText(getActivity(), "" + response_model.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            for (int i = 0; i < response_model.getErrors().size(); i++) {
+                                Toast.makeText(getActivity(), "" + response_model.getErrors().get(i).getErrorMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
                     }
                 });
-
             }
         });
     }

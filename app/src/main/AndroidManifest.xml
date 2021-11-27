@@ -23,7 +23,7 @@
         <activity
             android:name=".view.Sign_up_in.SignInActivity"
             android:exported="false" />
-        <activity android:name=".view.Home.MainActivity">
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

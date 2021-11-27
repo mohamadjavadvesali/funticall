@@ -18,7 +18,7 @@
     <string name="fullname">نام ونام خانوادگی</string>
     <string name="email">ایمیل</string>
     <string name="message">پیام</string>
-    <string name="whats">whats on your mind?</string>
+    <string name="addposttitle">سلام کاربر گرامی! نظرات و تحلیل های خود را با سایر کاربران به اشتراک بگذارید، لطفا از # هشتگ برای مشخص کردن سهام و عناوین اصلی خود استفاده کنید</string>
     <string name="todo">TODO</string>
     <string name="haghigi">حقیقی</string>
     <string name="hogoghi">حقوقی</string>
@@ -36,12 +36,13 @@
     <string name="like">لایک</string>
 
 
-
     <string name="nameejabr">نام و نام خانوادگی الزامی است</string>
     <string name="okay">عملیات با موفقیت انجام شد</string>
     <string name="beyn2.100">ام و نام خانوادگی باید بین 2 تا 100 کاراکتر باشد</string>
     <string name="mobileedi">شماره موبایل را به صورت صحیح وارد کنید</string>
     <string name="emailedi">ایمیل را به صورت صحیح وارد کنید</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -20,7 +20,7 @@ import com.fntl.app.R;
 import com.fntl.app.databinding.FragmentVerificationPhoneBinding;
 import com.fntl.app.model.Response_Model;
 import com.fntl.app.utils.App;
-import com.fntl.app.view.Home.MainActivity;
+import com.fntl.app.view.MainActivity;
 import com.fntl.app.viewmodel.MainActivityViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 

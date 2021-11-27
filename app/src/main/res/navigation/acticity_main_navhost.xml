@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_homeFragment_to_commentPostFragment"
             app:destination="@id/commentPostFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/commentPostFragment"
@@ -18,6 +21,14 @@
         android:label="CommentPostFragment">
         <action
             android:id="@+id/action_commentPostFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.fntl.app.view.Sign_up_in.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
